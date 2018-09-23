@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" media="all" th:href="@{style.css}"/>
+</head>
+<body>
+    <p th:text="'Hello, ' + ${name} + '!'" />
+	<h2>HTML Table</h2>
+	<table>
+	 <tr>
+		<th>Company</th>
+		<th>Contact</th>
+		<th>Country</th>
+	</tr>
+	
+	 <tr th:each="object: ${templateParams.firstTableParams}">
+		 <td th:text="${object.name}" />
+		 <td th:text="${object.date}" />
+		 <td th:text="${object.example}" />
+	 </tr>
+
+	</table>
+
+	<img class="logo" src="logo.png"/>
+</body>
+</html>
